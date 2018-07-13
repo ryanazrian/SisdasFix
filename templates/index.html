@@ -1,0 +1,270 @@
+<html>
+    <head>
+        <title>Tomatos rippnes and wight approx</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .split {
+              height: 100%;
+              width: 50%;
+              position: fixed;
+              z-index: 1;
+              top: 0;
+              overflow-x: hidden;
+              padding-top: 20px;
+            }
+            
+
+            /* Control the left side */
+            .left {
+              left: 0;
+              
+            }
+    
+            /* Control the right side */
+            .right {
+              right: 0;
+    
+            }
+    
+            /* If you want the content centered horizontally and vertically */
+            .centered {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+            }
+    
+            /* Style the image inside the centered container, if needed */
+            .centered img {
+              width: 150px;
+              border-radius: 50%;
+            }
+            .failed {
+                padding: 20px;
+                background-color: #f44336;
+                color: white;
+            }
+            .success {
+                padding: 20px;
+                background-color: #90EE90;
+                color: white;
+            }
+            .closebtn {
+                margin-left: 15px;
+                color: white;
+                font-weight: bold;
+                float: right;
+                font-size: 22px;
+                line-height: 20px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+    
+            .closebtn:hover {
+                color: black;
+            }
+            .form-style-6{
+                font: 95% Arial, Helvetica, sans-serif;
+                max-width: 400px;
+                margin: 10px auto;
+                padding: 16px;
+                background: rgb(235, 229, 229);
+            }
+            .form-style-6 h1{
+                background: #43D1AF;
+                padding: 20px 0;
+                font-size: 140%;
+                font-weight: 300;
+                text-align: center;
+                color: #fff;
+                margin: -16px -16px 16px -16px;
+            }
+            .form-style-6 input[type="text"],
+            .form-style-6 input[type="date"],
+            .form-style-6 input[type="datetime"],
+            .form-style-6 input[type="email"],
+            .form-style-6 input[type="number"],
+            .form-style-6 input[type="search"],
+            .form-style-6 input[type="time"],
+            .form-style-6 input[type="url"],
+            .form-style-6 textarea,
+            .form-style-6 select 
+            {
+                -webkit-transition: all 0.30s ease-in-out;
+                -moz-transition: all 0.30s ease-in-out;
+                -ms-transition: all 0.30s ease-in-out;
+                -o-transition: all 0.30s ease-in-out;
+                outline: none;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                background: rgb(207, 255, 176);
+                margin-bottom: 4%;
+                border: 1px solid #ccc;
+                padding: 3%;
+                color: #555;
+                font: 95% Arial, Helvetica, sans-serif;
+            }
+            .form-style-6 input[type="text"]:focus,
+            .form-style-6 input[type="date"]:focus,
+            .form-style-6 input[type="datetime"]:focus,
+            .form-style-6 input[type="email"]:focus,
+            .form-style-6 input[type="number"]:focus,
+            .form-style-6 input[type="search"]:focus,
+            .form-style-6 input[type="time"]:focus,
+            .form-style-6 input[type="url"]:focus,
+            .form-style-6 textarea:focus,
+            .form-style-6 select:focus
+            {
+                box-shadow: 0 0 5px #43D1AF;
+                padding: 3%;
+                border: 1px solid #43D1AF;
+            }
+    
+            .form-style-6 input[type="submit"],
+            .form-style-6 input[type="button"]{
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                padding: 3%;
+                background: #43D1AF;
+                border-bottom: 2px solid #30C29E;
+                border-top-style: none;
+                border-right-style: none;
+                border-left-style: none;    
+                color: #fff;
+            }
+            .form-style-6 input[type="submit"]:hover,
+            .form-style-6 input[type="button"]:hover{
+                background: #2EBC99;
+            }
+            .image-size{
+                width: 50 px;
+                height: 50 px;
+            }
+
+            body, html {
+            height: 100%;
+            }
+            .bg { 
+             /* The image used */
+            background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+
+             /* Half height */
+            height: 30%; 
+
+             /* Center and scale the image nicely */
+             background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }         
+            </style>
+    </head>
+    <body  >
+        <div class="bg"  >
+             <section class="hero"> 
+                <div class="hero-body">
+                <p class="title">
+                    TOMATS 
+                </p>
+                <p class="subtitle">
+                   Predict Tomato's Rippnes and Weight
+                </p>
+            </section>
+            </div>
+        </div>
+    
+    
+        <section class="section">
+            <nav class="level">
+                <div class="level-item has-text-centered form-style-6">
+                    <div>
+                        <h1 class="heading">Upload Picture</h1>
+                        <p>File must be 'png' or 'jpg' or 'jpeg'</p>
+                        <form method=post enctype=multipart/form-data>
+                            <input type=file name=file><br>
+                            <br>
+                            <input type=submit value=Upload>
+                          </form>
+                    </div>
+                </div>
+                {% if berhasil %}
+                <div class="level-item has-text-centered form-style-6">
+                    <div class="container">
+                        <h1 class="heading">Hasil</h1>
+                        <img  src="/ambil/{{ filename }}"></img>
+                        <table class="table table-responsive table-hover">
+                            <thead class="thead-dark table-hover">
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Atribut</th>
+                                <th scope="col">Output</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Akurasi Model Klasifikasi</td>
+                                    <td>{{value}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Tingkat kematangan</td>
+                                    <td>{{value2}}</td>
+                                </tr>
+                              </tr>
+                            </tbody>
+                          </table>
+                          
+                          <table class="table table-responsive table-hover">
+                            <thead class="thead-dark table-hover">
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Atribut</th>
+                                <th scope="col">Output</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Akurasi model linear</td>
+                                <td>{{value4}}</td>
+                              </tr>
+                              <tr>
+                                    <th scope="row">2</th>
+                                    <td>Mean Square Error</td>
+                                    <td>{{value5}}</td>
+                                  </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Prediksi berat</td>
+                                <td>{{value3}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+                {% endif %}
+            </nav>
+        </section>
+    
+        {% if berhasil %}
+        <div class="success">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          <strong>Success!</strong> 
+        </div>
+    {% endif %}
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+    <footer>
+        <p class="text-center"> &copy; 2018 wr<p>
+        <p class="text-center"> Image Processing & Smart System<p>
+    </footer>
+    </html>
